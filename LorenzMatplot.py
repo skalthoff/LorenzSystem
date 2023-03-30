@@ -14,7 +14,7 @@ def plot_lorenz_system(sigma, rho, beta, initial_state, t_span, t_eval):
     sol = solve_ivp(lorenz_system, t_span, initial_state, args=(sigma, rho, beta), t_eval=t_eval)
 
     fig = plt.figure()
-    ax = fig.gca(projection="3d")
+    ax = fig.add_subplot(111, projection="3d")
     ax.plot(sol.y[0], sol.y[1], sol.y[2])
     ax.set_xlabel("X")
     ax.set_ylabel("Y")
